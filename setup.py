@@ -8,13 +8,13 @@ with codecs.open('README.rst', encoding='utf-8') as f:
 
 
 setup(
-    name='webssh',
+    name='matreshka-servers-live-ssh',
     version=version,
-    description='Web based ssh client',
+    description='Matreshka VPN servers live SSH',
     long_description=long_description,
-    author='Shengdun Hua',
-    author_email='webmaster0115@gmail.com',
-    url='https://github.com/huashengdun/webssh',
+    author='Старый пацан',
+    author_email='personal.daniil@gmail.com',
+    url='https://github.com/Trading-Box/matreshka-servers-ssh-daemon',
     packages=['webssh'],
     entry_points='''
     [console_scripts]

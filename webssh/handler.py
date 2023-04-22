@@ -487,9 +487,6 @@ class IndexHandler(MixinHandler, tornado.web.RequestHandler):
     def head(self):
         pass
 
-    def get(self):
-        self.render('index.html', debug=self.debug, font=self.font)
-
     @tornado.gen.coroutine
     def post(self):
         if self.debug and self.get_argument('error', u''):
