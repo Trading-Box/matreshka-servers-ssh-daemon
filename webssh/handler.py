@@ -534,7 +534,7 @@ class WsockHandler(MixinHandler, tornado.websocket.WebSocketHandler):
         logging.info('Connected from {}:{}'.format(*self.src_addr))
         logging.info('Testing')
 
-        # workers = clients.get(self.src_addr[0])
+        workers = clients.get(self.src_addr[0])
         # if not workers:
         #     self.close(reason='Websocket authentication failed.')
         #     return
