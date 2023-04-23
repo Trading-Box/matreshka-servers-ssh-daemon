@@ -533,10 +533,10 @@ class WsockHandler(MixinHandler, tornado.websocket.WebSocketHandler):
         self.src_addr = self.get_client_addr()
         logging.info('Connected from {}:{}'.format(*self.src_addr))
 
-        workers = clients.get(self.src_addr[0])
-        if not workers:
-            self.close(reason='Websocket authentication failed.')
-            return
+        # workers = clients.get(self.src_addr[0])
+        # if not workers:
+        #     self.close(reason='Websocket authentication failed.')
+        #     return
 
         try:
             worker_id = self.get_value('id')
