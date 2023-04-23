@@ -532,6 +532,7 @@ class WsockHandler(MixinHandler, tornado.websocket.WebSocketHandler):
     def open(self):
         self.src_addr = self.get_client_addr()
         logging.info('Connected from {}:{}'.format(*self.src_addr))
+        logging.info('Testing')
 
         # workers = clients.get(self.src_addr[0])
         # if not workers:
