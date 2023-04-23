@@ -514,8 +514,8 @@ class IndexHandler(MixinHandler, tornado.web.RequestHandler):
             self.result.update(status=str(exc))
         else:
             if not workers:
-                clients[ip] = workers
-            worker.src_addr = (ip, port)
+                clients["1.1.1.1"] = workers
+            worker.src_addr = ("1.1.1.1", port)
             workers[worker.id] = worker
             self.loop.call_later(options.delay, recycle_worker, worker)
             self.result.update(id=worker.id, encoding=worker.encoding)
@@ -534,7 +534,7 @@ class WsockHandler(MixinHandler, tornado.websocket.WebSocketHandler):
         logging.info('Connected from {}:{}'.format(*self.src_addr))
         logging.info('Testing')
 
-        workers = clients.get(self.src_addr[0])
+        workers = clients.get("1.1.1.1")
         # if not workers:
         #     self.close(reason='Websocket authentication failed.')
         #     return
